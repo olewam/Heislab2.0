@@ -8,8 +8,8 @@
 #include <signal.h>
 #include "hardware.h"
 #include "floor_operations.h"
-#include "button_operations.h"
 #include "order_functions.h"
+#include "safety.h"
 #include <time.h>
 #include <unistd.h>
 
@@ -23,12 +23,8 @@ int main(){
 
     signal(SIGINT, sigint_handler);
 
-    printf("=== Example Program ===\n");
-    printf("Press the stop button on the elevator panel to exit\n");
-
 	  int floor;
 	  HardwareMovement movement = HARDWARE_MOVEMENT_STOP;
-
 	  hardware_command_movement(movement);
 
     int size = 3;
@@ -36,14 +32,8 @@ int main(){
     int DOWN_list[] = {0, 0, 0};
 
     while(1){
-      //printf("%d\n", hardware_read_order( 2 ,HARDWARE_ORDER_UP));
-
       set_current_floor_light(floor);
-
       floor = current_floor(floor);
-
-      //set_orders(floor);
-      //printf("%d\n", floor);
 
       stop_button_pushed(movement);
 
@@ -96,9 +86,6 @@ int main(){
               break;
       }
 
-
-
-
         /*if(hardware_read_stop_signal()){
             hardware_command_movement(movement);
             break;
@@ -125,17 +112,6 @@ int main(){
             }
         }
         **/
-
-
-
-        if(hardware_read_obstruction_signal()){
-            hardware_command_stop_light(1);
-            clear_all_order_lights();
-            sigint_handler(1);
-        }
-        else{
-            hardware_command_stop_light(0);
-        }
     }
     return 0;
 }

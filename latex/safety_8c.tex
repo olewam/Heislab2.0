@@ -1,0 +1,35 @@
+\hypertarget{safety_8c}{}\section{source/safety.c File Reference}
+\label{safety_8c}\index{source/safety.\+c@{source/safety.\+c}}
+
+
+implementation of safetyfunctions  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hardware.\+h\char`\"{}}\newline
+Include dependency graph for safety.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{safety_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{safety_8c_a333290f845f371fb237ce82394640390}\label{safety_8c_a333290f845f371fb237ce82394640390}} 
+void \hyperlink{safety_8c_a333290f845f371fb237ce82394640390}{read\+\_\+obstruction\+\_\+signal} ()
+\begin{DoxyCompactList}\small\item\em stop the elevator if obstruction switch is used \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{safety_8c_a1ef434f57c0cde9e2dca0f8d5a9235ab}\label{safety_8c_a1ef434f57c0cde9e2dca0f8d5a9235ab}} 
+void {\bfseries stop\+\_\+button\+\_\+pushed} (\hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} current\+\_\+movement)
+\item 
+\mbox{\Hypertarget{safety_8c_a258e3b580e688a0cf46e4258525aeaf1}\label{safety_8c_a258e3b580e688a0cf46e4258525aeaf1}} 
+void \hyperlink{safety_8c_a258e3b580e688a0cf46e4258525aeaf1}{sigint\+\_\+handler} (int sig)
+\begin{DoxyCompactList}\small\item\em Stop elevator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+implementation of safetyfunctions 
+

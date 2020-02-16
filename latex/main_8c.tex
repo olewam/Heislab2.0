@@ -12,6 +12,7 @@ main file for running the elevator code
 {\ttfamily \#include \char`\"{}floor\+\_\+operations.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}button\+\_\+operations.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}order\+\_\+functions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}safety.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$time.\+h$>$}\newline
 {\ttfamily \#include $<$unistd.\+h$>$}\newline
 Include dependency graph for main.\+c\+:
@@ -43,5 +44,5 @@ main file for running the elevator code
 
 for(int f = 0; f $<$ H\+A\+R\+D\+W\+A\+R\+E\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+F\+L\+O\+O\+RS; f++)\{ if(hardware\+\_\+read\+\_\+order(f, H\+A\+R\+D\+W\+A\+R\+E\+\_\+\+O\+R\+D\+E\+R\+\_\+\+I\+N\+S\+I\+D\+E))\{ hardware\+\_\+command\+\_\+floor\+\_\+indicator\+\_\+on(f); \} \}
 
-Definition at line 16 of file main.\+c.
+Definition at line 17 of file main.\+c.
 
