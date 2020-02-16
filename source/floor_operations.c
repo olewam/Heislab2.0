@@ -67,11 +67,35 @@ HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[]){
     for(int i = 0; i < 3; i++){
       if(UP_list[i] == 1){
         return HARDWARE_MOVEMENT_UP;
-
       }
-      else if(DOWN_list[i] == 1){
+      else if(DOWN_list[i] == 1){ //Blir indekseringen for UP og DOWN list feil???
         return HARDWARE_MOVEMENT_DOWN;
       }
     }
     return HARDWARE_MOVEMENT_STOP;
 }
+
+/*
+New suggestion for the function:
+
+HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[], int current_floor){
+    for(int i = 0; i < 3; i++){
+      if(UP_list[i] == 1){
+        if(i < current_floor){
+          return HARDWARE_MOVEMENT_DOWN;
+        } else if {
+          return HARDWARE_MOVEMENT_UP;
+      }
+    }
+
+    if(DOWN_list[i] == 1){
+        if(i > current_floor){
+            return HARDWARE_MOVEMENT_UP;
+        } else if {
+            return HARDWARE_MOVEMENT_DOWN;
+        }
+    }
+  }
+  return HARDWARE_MOVEMENT_STOP;
+}
+*/
