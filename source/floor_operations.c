@@ -63,6 +63,7 @@ void clear_all_order_lights(){
 }
 
 HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[]){
+    //Need to check if requested floor is in the opposite direction of the requested direction
     for(int i = 0; i < 3; i++){
       if(UP_list[i] == 1){
         return HARDWARE_MOVEMENT_UP;

@@ -32,6 +32,7 @@ int main(){
     int DOWN_list[] = {0, 0, 0};
 
     while(1){
+      //elevator_limits(movement);
       set_current_floor_light(floor);
       floor = current_floor(floor);
 
@@ -85,33 +86,6 @@ int main(){
               printf("Hello suckers");
               break;
       }
-
-        /*if(hardware_read_stop_signal()){
-            hardware_command_movement(movement);
-            break;
-        }
-	*/
-
-  /*  Få heisen til å snu i endepunktene
-        if(hardware_read_floor_sensor(0)){
-            movement = HARDWARE_MOVEMENT_UP;
-            hardware_command_movement(movement);
-        }
-        if(hardware_read_floor_sensor(HARDWARE_NUMBER_OF_FLOORS - 1)){
-           movement = HARDWARE_MOVEMENT_DOWN;
-           hardware_command_movement(movement);
-        }
-
-        */
-
-       //All buttons must be polled, like this:
-       /**
-       for(int f = 0; f < HARDWARE_NUMBER_OF_FLOORS; f++){
-            if(hardware_read_order(f, HARDWARE_ORDER_INSIDE)){
-                hardware_command_floor_indicator_on(f);
-            }
-        }
-        **/
     }
     return 0;
 }

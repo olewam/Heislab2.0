@@ -33,3 +33,17 @@ void sigint_handler(int sig){
     hardware_command_movement(HARDWARE_MOVEMENT_STOP);
     exit(0);
 }
+
+/*
+//Pass by reference slik at movement blir redigert i main
+void elevator_limits(HardwareMovement &movement){
+    if(hardware_read_floor_sensor(0)){
+        movement = HARDWARE_MOVEMENT_UP;
+        hardware_command_movement(movement);
+    }
+    if(hardware_read_floor_sensor(HARDWARE_NUMBER_OF_FLOORS - 1)){
+       movement = HARDWARE_MOVEMENT_DOWN;
+       hardware_command_movement(movement);
+    }
+}
+*/

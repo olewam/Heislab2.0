@@ -17,3 +17,8 @@ void stop_button_pushed();
   * @brief Stop elevator
 */
 void sigint_handler(int sig);
+
+/**
+  * @brief stop elevator to go outside physical limits
+*/
+//void elevator_limits(HardwareMovement &movement);
