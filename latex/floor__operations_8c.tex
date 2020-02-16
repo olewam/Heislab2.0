@@ -1,0 +1,40 @@
+\hypertarget{floor__operations_8c}{}\section{source/floor\+\_\+operations.c File Reference}
+\label{floor__operations_8c}\index{source/floor\+\_\+operations.\+c@{source/floor\+\_\+operations.\+c}}
+
+
+Implementation of floor operation functions.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hardware.\+h\char`\"{}}\newline
+Include dependency graph for floor\+\_\+operations.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{floor__operations_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{floor__operations_8c_a427ef174ce043da90cc7eed05dd926fa}\label{floor__operations_8c_a427ef174ce043da90cc7eed05dd926fa}} 
+int \hyperlink{floor__operations_8c_a427ef174ce043da90cc7eed05dd926fa}{current\+\_\+floor} (int temp\+\_\+floor)
+\begin{DoxyCompactList}\small\item\em return current floor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{floor__operations_8c_ae66b4c87b3bec60400feed14d9a69ae0}\label{floor__operations_8c_ae66b4c87b3bec60400feed14d9a69ae0}} 
+void \hyperlink{floor__operations_8c_ae66b4c87b3bec60400feed14d9a69ae0}{set\+\_\+current\+\_\+floor\+\_\+light} (int temp\+\_\+floor)
+\begin{DoxyCompactList}\small\item\em turn on the lights for current floor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{floor__operations_8c_a0181728ae9eaaf64fab10f8bec0504cf}\label{floor__operations_8c_a0181728ae9eaaf64fab10f8bec0504cf}} 
+void \hyperlink{floor__operations_8c_a0181728ae9eaaf64fab10f8bec0504cf}{set\+\_\+and\+\_\+clear\+\_\+order\+\_\+lights} ()
+\begin{DoxyCompactList}\small\item\em set and clear the order lights on the panel \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{floor__operations_8c_afd77151474c3e94d7c52fd75413ae3ca}\label{floor__operations_8c_afd77151474c3e94d7c52fd75413ae3ca}} 
+void \hyperlink{floor__operations_8c_afd77151474c3e94d7c52fd75413ae3ca}{clear\+\_\+all\+\_\+order\+\_\+lights} ()
+\begin{DoxyCompactList}\small\item\em clear all the order lights at once \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{floor__operations_8c_a5cd195763dabef6f126ef50f2f7cd1f5}\label{floor__operations_8c_a5cd195763dabef6f126ef50f2f7cd1f5}} 
+\hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} \hyperlink{floor__operations_8c_a5cd195763dabef6f126ef50f2f7cd1f5}{choose\+\_\+init\+\_\+direction} (int U\+P\+\_\+list\mbox{[}$\,$\mbox{]}, int D\+O\+W\+N\+\_\+list\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em choose movement direction when stationary \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of floor operation functions. 
+

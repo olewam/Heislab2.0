@@ -1,3 +1,8 @@
+/**
+  * @file
+  * @brief Implementation of hardware.h
+*/
+
 #include "hardware.h"
 #include "channels.h"
 #include "io.h"

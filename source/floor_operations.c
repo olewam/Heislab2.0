@@ -1,3 +1,8 @@
+/**
+  * @file
+  * @brief Implementation of floor operation functions
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "hardware.h"
@@ -17,6 +22,30 @@ void set_current_floor_light(int temp_floor)
   hardware_command_floor_indicator_on(temp_floor);
 }
 
+void set_and_clear_order_lights(){
+    for(int f = 0; f < HARDWARE_NUMBER_OF_FLOORS; f++){
+       // Internal orders
+       if(hardware_read_order(f, HARDWARE_ORDER_INSIDE)){
+           hardware_command_order_light(f, HARDWARE_ORDER_INSIDE, 1);
+       } else {
+           hardware_command_order_light(f, HARDWARE_ORDER_INSIDE, 0);
+       }
+
+       // Orders going up
+       if(hardware_read_order(f, HARDWARE_ORDER_UP)){
+           hardware_command_order_light(f, HARDWARE_ORDER_UP, 1);
+       } else {
+           hardware_command_order_light(f, HARDWARE_ORDER_INSIDE, 0);
+       }
+
+       // Orders going down
+       if(hardware_read_order(f, HARDWARE_ORDER_DOWN)){
+           hardware_command_order_light(f, HARDWARE_ORDER_DOWN, 1);
+       } else {
+           hardware_command_order_light(f, HARDWARE_ORDER_INSIDE, 0);
+       }
+   }
+}
 
 void clear_all_order_lights(){
     HardwareOrder order_types[3] = {
