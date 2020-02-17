@@ -4,6 +4,11 @@
 */
 
 /**
+  * @brief Stop elevator
+*/
+void sigint_handler(int sig);
+
+/**
   * @brief stop the elevator if obstruction switch is used
 */
 void read_obstruction_signal();
@@ -11,14 +16,11 @@ void read_obstruction_signal();
 /**
   * @brief stop the elevator when button is pushed
 */
-void stop_button_pushed();
-
-/**
-  * @brief Stop elevator
-*/
-void sigint_handler(int sig);
+void stop_button_pushed(HardwareMovement *current_movement, int UP_list[], int DOWN_list[]);
 
 /**
   * @brief stop elevator to go outside physical limits
+  *
+  *  @return stop elevator in end points
 */
-//void elevator_limits(HardwareMovement &movement);
+HardwareMovement elevator_limits(HardwareMovement current_movement);

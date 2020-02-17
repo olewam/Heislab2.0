@@ -1,5 +1,5 @@
 /**
-  * @file 
+  * @file
   * @brief implementation of order functions
 */
 
