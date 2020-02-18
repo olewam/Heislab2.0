@@ -16,7 +16,7 @@ void read_obstruction_signal();
 /**
   * @brief stop the elevator when button is pushed
 */
-void stop_button_pushed(HardwareMovement *current_movement, int UP_list[], int DOWN_list[]);
+void stop_button_pushed(HardwareMovement current_movement, int UP_list[], int DOWN_list[]);
 
 /**
   * @brief stop elevator to go outside physical limits

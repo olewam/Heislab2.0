@@ -33,6 +33,37 @@ int current_floor(int temp_floor)
   return temp_floor;
 }
 
+void set_UP_list(int UP_list[]){
+  for(int f = 0; f < HARDWARE_NUMBER_OF_FLOORS; f++){
+    if(hardware_read_order(f, HARDWARE_ORDER_UP)){
+      UP_list[f] = 1;
+    }
+  }
+}
+
+void set_DOWN_list(int DOWN_list[]){
+  for(int f = 0; f < HARDWARE_NUMBER_OF_FLOORS; f++){
+    if(hardware_read_order(f, HARDWARE_ORDER_DOWN)){
+      DOWN_list[f] = 1;
+    }
+  }
+}
+
+void handle_inside_order(int UP_list[], int DOWN_list[]){
+  for(int f = 0; f < (HARDWARE_NUMBER_OF_FLOORS); f++){
+    if(hardware_read_order(f, HARDWARE_ORDER_INSIDE)){
+      /*if(current_floor >= f){
+        DOWN_list[f] = 1;
+      }
+      if(current_floor <= f){
+        UP_list[f] = 1;
+      }*/
+      UP_list[f] = 1;
+      DOWN_list[f] = 1;
+    }
+  }
+}
+
 HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[], int temp_floor, int * wrong_dir_flag){
     for(int i = 0; i < HARDWARE_NUMBER_OF_FLOORS; i++){
       if(UP_list[i] == 1){
@@ -115,10 +146,30 @@ void wait_3_seconds(int UP_list[], int DOWN_list[], int current_floor, HardwareM
   }
 }
 
+void check_higher_order(int DOWN_list[], int current_floor, bool * stop_flag){
+    for(int i = current_floor; i < (HARDWARE_NUMBER_OF_FLOORS - 1); i++){
+        if((DOWN_list[i] == 1)){
+            stop_flag = 0;
+            break;
+        }
+    }
+    stop_flag = 1;
+}
 
-void stop_UP_list_elevator(int UP_list[], int DOWN_list[], int current_floor, HardwareMovement *current_movement, int *wrong_dir_flag) {
+void check_lower_order(int UP_list[], int current_floor, bool * stop_flag){
+    for(int i = current_floor; i >= 0; i--){
+        if((UP_list[i] == 1)){
+            stop_flag = 0;
+            break;
+        }
+    }
+    stop_flag = 1;
+}
+
+
+void stop_UP_list_elevator(int UP_list[], int DOWN_list[], int current_floor, HardwareMovement *current_movement, bool *wrong_dir_flag, bool stop_flag) {
   for(int i = 0; i < HARDWARE_NUMBER_OF_FLOORS; i++){
-    if((UP_list[i] == 1) && (hardware_read_floor_sensor(i))){
+    if((stop_flag == 1) && (UP_list[i] == 1) && (hardware_read_floor_sensor(i))){
       UP_list[i] = 0;
       DOWN_list[i] = 0;
       *wrong_dir_flag = 0;
@@ -131,9 +182,9 @@ void stop_UP_list_elevator(int UP_list[], int DOWN_list[], int current_floor, Ha
   }
 }
 
-void stop_DOWN_list_elevator(int DOWN_list[], int UP_list[], int current_floor, HardwareMovement *current_movement, int *wrong_dir_flag){
+void stop_DOWN_list_elevator(int DOWN_list[], int UP_list[], int current_floor, HardwareMovement *current_movement, bool *wrong_dir_flag, bool stop_flag){
   for(int i = 0; i < HARDWARE_NUMBER_OF_FLOORS; i++){
-    if((DOWN_list[i] == 1) && (hardware_read_floor_sensor(i))){
+    if((stop_flag == 1) && (DOWN_list[i] == 1) && (hardware_read_floor_sensor(i))){
       DOWN_list[i] = 0;
       UP_list[i] = 0;
       *wrong_dir_flag = 0;
@@ -151,13 +202,3 @@ void clear_all_orders(int UP_list[], int DOWN_list[]){
     DOWN_list[i] = 0;
   }
 }
-
-/*
-void check_higher_order(){
-
-}
-
-void check_lower_order(){
-
-}
-*/

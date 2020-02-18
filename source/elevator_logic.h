@@ -18,6 +18,21 @@ int find_default_floor();
 int current_floor(int temp_floor);
 
 /**
+  * @brief set list of orders going UP
+*/
+void set_UP_list(int UP_list[]);
+
+/**
+  * @brief set list of orders going DOWN
+*/
+void set_DOWN_list(int DOWN_list[]);
+
+/**
+  * @brief handle orders from inside elavtor
+*/
+void handle_inside_order(int UP_list[], int DOWN_list[]);
+
+/**
   * @brief choose movement direction when stationary
   *
   * @return movement direction for first order
@@ -28,6 +43,16 @@ HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[], int temp_
   * @brief stop for 3 sek
 */
 void wait_3_seconds(int UP_list[], int DOWN_list[], int current_floor, HardwareMovement *current_movement);
+
+/**
+  * @brief check if there is an order higher up that the elevator need to handle first
+*/
+void check_higher_order(int DOWN_list[], int current_floor, bool * stop_flag);
+
+/**
+  * @brief check if there is an order lower that the elevator need to handle first
+*/
+void check_lower_order(int UP_list[], int current_floor, bool * stop_flag);
 
 /**
   * @brief stop elevator based on UP_list
