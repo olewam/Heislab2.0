@@ -22,21 +22,26 @@ int current_floor(int temp_floor);
   *
   * @return movement direction for first order
 */
-HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[], int current_floor);
+HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[], int temp_floor, int * wrong_dir_flag);
+
+/**
+  * @brief stop for 3 sek
+*/
+void wait_3_seconds(int UP_list[], int DOWN_list[], int current_floor, HardwareMovement *current_movement);
 
 /**
   * @brief stop elevator based on UP_list
   *
   * @return stop elevator
 */
-HardwareMovement stop_UP_list_elevator(int UP_list[], int current_floor, HardwareMovement current_movement);
+HardwareMovement stop_UP_list_elevator(int UP_list[], int DOWN_list[], int current_floor, HardwareMovement *current_movement, int *wrong_dir_flag);
 
 /**
   * @brief stop elevator based on DOWN_list[]
   *
   * @return stop elevator
 */
-HardwareMovement stop_DOWN_list_elevator(int DOWN_list[], int current_floor, HardwareMovement current_movement);
+HardwareMovement stop_DOWN_list_elevator(int DOWN_list[], int UP_list[], int current_floor, HardwareMovement *current_movement, int *wrong_dir_flag);
 
 /**
   * @brief clear all orders

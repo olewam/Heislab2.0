@@ -13,6 +13,8 @@
 #include "elevator_logic.h"
 #include <time.h>
 #include <unistd.h>
+#include <stdbool.h>
+
 
 int main(){
     int error = hardware_init();
@@ -28,12 +30,18 @@ int main(){
 	  HardwareMovement movement = HARDWARE_MOVEMENT_STOP;
 	  hardware_command_movement(movement);
 
-    int UP_list[] = {0, 0, 0};
-    int DOWN_list[] = {0, 0, 0};
+    int UP_list[] = {0, 0, 0, 0};
+    int DOWN_list[] = {0, 0, 0, 0};
+    int wrong_dir_flag = 0;
+
 
     while(1){
       read_obstruction_signal();
+
       movement = elevator_limits(movement);
+      hardware_command_movement(movement);
+
+
       set_current_floor_light(floor);
       set_order_lights();
       floor = current_floor(floor);
@@ -42,13 +50,18 @@ int main(){
 
       set_UP_list(UP_list);
       set_DOWN_list(DOWN_list);
-      //handle_inside_order(floor, UP_list, DOWN_list);
+
+
+      handle_inside_order(UP_list, DOWN_list);
 
       switch(movement){
         case HARDWARE_MOVEMENT_UP:
-            movement = stop_UP_list_elevator(UP_list, floor, movement);
-            movement = stop_DOWN_list_elevator(DOWN_list, floor, movement);
-            hardware_command_movement(movement);
+            stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag);
+            if(wrong_dir_flag == 1){
+
+                stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag);
+            }
+
             /*for(int i = 0; i < size; i++){
               if((UP_list[i] == 1) && (i == floor)){
                 movement = HARDWARE_MOVEMENT_STOP;
@@ -66,9 +79,11 @@ int main(){
             break;
 
           case HARDWARE_MOVEMENT_DOWN:
-              movement = stop_DOWN_list_elevator(DOWN_list, floor, movement);
-              movement = stop_UP_list_elevator(UP_list, floor, movement);
-              hardware_command_movement(movement);
+              stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag );
+              if(wrong_dir_flag == 1){
+                    stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag);
+              }
+
 
               /*for(int i = 0; i < size; i++){
                 if((DOWN_list[i] == 1) && ((i + 1) == floor)){
@@ -86,7 +101,9 @@ int main(){
               break;
 
           case HARDWARE_MOVEMENT_STOP:
-              movement = choose_init_direction(UP_list, DOWN_list, floor);
+              //stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement);
+              //stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement);
+              movement = choose_init_direction(UP_list, DOWN_list, floor, &wrong_dir_flag);
               hardware_command_movement(movement);
               break;
 

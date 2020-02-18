@@ -31,7 +31,7 @@ void stop_button_pushed(HardwareMovement *current_movement, int UP_list[], int D
   while(hardware_read_stop_signal()){
       hardware_command_stop_light(1);
       clear_all_orders(UP_list, DOWN_list);
-      *current_movement = HARDWARE_MOVEMENT_STOP;
+      *current_movement = HARDWARE_MOVEMENT_STOP; //Ta vare på current movment så heisen vet hvor den er
       hardware_command_movement(*current_movement);
       clear_all_order_lights();
   }
