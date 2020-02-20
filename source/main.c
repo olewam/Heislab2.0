@@ -8,7 +8,6 @@
 #include <signal.h>
 #include "hardware.h"
 #include "button_lights_doors.h"
-#include "order_functions.h"
 #include "safety.h"
 #include "elevator_logic.h"
 #include <time.h>
@@ -33,8 +32,8 @@ int main(){
     int UP_list[] = {0, 0, 0, 0};
     int DOWN_list[] = {0, 0, 0, 0};
 
-    bool stop_flag = 1;
-    bool wrong_dir_flag = 0;
+    _Bool stop_flag = 1;
+    _Bool wrong_dir_flag = 0;
 
 
     while(1){
@@ -48,7 +47,7 @@ int main(){
       set_order_lights();
       floor = current_floor(floor);
 
-      stop_button_pushed(movement, UP_list, DOWN_list);
+      stop_button_pushed(movement, floor, UP_list, DOWN_list, &wrong_dir_flag);
 
       set_UP_list(UP_list);
       set_DOWN_list(DOWN_list);
@@ -60,10 +59,10 @@ int main(){
 
       switch(movement){
         case HARDWARE_MOVEMENT_UP:
-            stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag);
+            stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag);
             if(wrong_dir_flag == 1){
                 check_higher_order(DOWN_list, floor, &stop_flag);
-                stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag);
+                stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag, stop_flag);
             }
 
             /*for(int i = 0; i < size; i++){
@@ -83,10 +82,10 @@ int main(){
             break;
 
           case HARDWARE_MOVEMENT_DOWN:
-              stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag );
+              stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag, stop_flag);
               if(wrong_dir_flag == 1){
                     check_lower_order(UP_list, floor, &stop_flag);
-                    stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag);
+                    stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag);
               }
 
 

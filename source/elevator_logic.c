@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "hardware.h"
-#include "order_functions.h"
 #include "button_lights_doors.h"
 #include <time.h>
 #include <stdbool.h>
@@ -64,7 +63,7 @@ void handle_inside_order(int UP_list[], int DOWN_list[]){
   }
 }
 
-HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[], int temp_floor, int * wrong_dir_flag){
+HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[], int temp_floor, _Bool * wrong_dir_flag){
     for(int i = 0; i < HARDWARE_NUMBER_OF_FLOORS; i++){
       if(UP_list[i] == 1){
         if(i < temp_floor){
@@ -146,28 +145,30 @@ void wait_3_seconds(int UP_list[], int DOWN_list[], int current_floor, HardwareM
   }
 }
 
-void check_higher_order(int DOWN_list[], int current_floor, bool * stop_flag){
+void check_higher_order(int DOWN_list[], int current_floor, _Bool * stop_flag){
     for(int i = current_floor; i < (HARDWARE_NUMBER_OF_FLOORS - 1); i++){
         if((DOWN_list[i] == 1)){
-            stop_flag = 0;
+            *stop_flag = 0;
             break;
+        } else {
+          *stop_flag = 1;
         }
     }
-    stop_flag = 1;
 }
 
-void check_lower_order(int UP_list[], int current_floor, bool * stop_flag){
+void check_lower_order(int UP_list[], int current_floor, _Bool * stop_flag){
     for(int i = current_floor; i >= 0; i--){
         if((UP_list[i] == 1)){
-            stop_flag = 0;
+            *stop_flag = 0;
             break;
+        } else {
+          *stop_flag = 1;
         }
     }
-    stop_flag = 1;
 }
 
 
-void stop_UP_list_elevator(int UP_list[], int DOWN_list[], int current_floor, HardwareMovement *current_movement, bool *wrong_dir_flag, bool stop_flag) {
+void stop_UP_list_elevator(int UP_list[], int DOWN_list[], int current_floor, HardwareMovement *current_movement, _Bool *wrong_dir_flag, _Bool stop_flag) {
   for(int i = 0; i < HARDWARE_NUMBER_OF_FLOORS; i++){
     if((stop_flag == 1) && (UP_list[i] == 1) && (hardware_read_floor_sensor(i))){
       UP_list[i] = 0;
@@ -182,7 +183,7 @@ void stop_UP_list_elevator(int UP_list[], int DOWN_list[], int current_floor, Ha
   }
 }
 
-void stop_DOWN_list_elevator(int DOWN_list[], int UP_list[], int current_floor, HardwareMovement *current_movement, bool *wrong_dir_flag, bool stop_flag){
+void stop_DOWN_list_elevator(int DOWN_list[], int UP_list[], int current_floor, HardwareMovement *current_movement, _Bool *wrong_dir_flag, _Bool stop_flag){
   for(int i = 0; i < HARDWARE_NUMBER_OF_FLOORS; i++){
     if((stop_flag == 1) && (DOWN_list[i] == 1) && (hardware_read_floor_sensor(i))){
       DOWN_list[i] = 0;
