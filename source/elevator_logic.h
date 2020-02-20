@@ -47,26 +47,26 @@ void wait_3_seconds(int UP_list[], int DOWN_list[], int current_floor, HardwareM
 /**
   * @brief check if there is an order higher up that the elevator need to handle first
 */
-void check_higher_order(int DOWN_list[], int current_floor, _Bool * stop_flag);
+void check_higher_order(int DOWN_list[], int current_floor, _Bool * stop_flag_up);
 
 /**
   * @brief check if there is an order lower that the elevator need to handle first
 */
-void check_lower_order(int UP_list[], int current_floor, _Bool * stop_flag);
+void check_lower_order(int UP_list[], int current_floor, _Bool * stop_flag_down);
 
 /**
   * @brief stop elevator based on UP_list
   *
   * @return stop elevator
 */
-HardwareMovement stop_UP_list_elevator(int UP_list[], int DOWN_list[], int current_floor, HardwareMovement *current_movement, _Bool *wrong_dir_flag, _Bool stop_flag);
+HardwareMovement stop_UP_list_elevator(int UP_list[], int DOWN_list[], int current_floor, HardwareMovement *current_movement, _Bool *wrong_dir_flag, _Bool stop_flag_down);
 
 /**
   * @brief stop elevator based on DOWN_list[]
   *
   * @return stop elevator
 */
-HardwareMovement stop_DOWN_list_elevator(int DOWN_list[], int UP_list[], int current_floor, HardwareMovement *current_movement, _Bool *wrong_dir_flag, _Bool stop_flag);
+HardwareMovement stop_DOWN_list_elevator(int DOWN_list[], int UP_list[], int current_floor, HardwareMovement *current_movement, _Bool *wrong_dir_flag, _Bool stop_flag_up);
 
 /**
   * @brief clear all orders

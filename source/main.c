@@ -32,15 +32,13 @@ int main(){
     int UP_list[] = {0, 0, 0, 0};
     int DOWN_list[] = {0, 0, 0, 0};
 
-    _Bool stop_flag = 1;
+    _Bool stop_flag_up = 1;
+    _Bool stop_flag_down = 1;
     _Bool wrong_dir_flag = 0;
 
 
     while(1){
       read_obstruction_signal();
-
-      movement = elevator_limits(movement);
-      hardware_command_movement(movement);
 
 
       set_current_floor_light(floor);
@@ -56,13 +54,16 @@ int main(){
       handle_inside_order(UP_list, DOWN_list);
 
 
-
       switch(movement){
         case HARDWARE_MOVEMENT_UP:
-            stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag);
+            if(wrong_dir_flag == 0){
+              stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag_down);
+            }
             if(wrong_dir_flag == 1){
-                check_higher_order(DOWN_list, floor, &stop_flag);
-                stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag, stop_flag);
+                check_higher_order(DOWN_list, floor, &stop_flag_up);
+                printf("up flag: %d\n", stop_flag_up);
+                stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag, stop_flag_up);
+                stop_flag_up = 1;
             }
 
             /*for(int i = 0; i < size; i++){
@@ -82,10 +83,14 @@ int main(){
             break;
 
           case HARDWARE_MOVEMENT_DOWN:
-              stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag, stop_flag);
+              if(wrong_dir_flag == 0){
+                stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag, stop_flag_up);
+              }
               if(wrong_dir_flag == 1){
-                    check_lower_order(UP_list, floor, &stop_flag);
-                    stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag);
+                    check_lower_order(UP_list, floor, &stop_flag_down);
+                    printf("down flag: %d\n", stop_flag_down);
+                    stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag_down);
+                    stop_flag_down = 1;
               }
 
 

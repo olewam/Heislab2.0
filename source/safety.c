@@ -54,17 +54,3 @@ void stop_button_pushed(HardwareMovement current_movement, int current_floor, in
     }
   }
 }
-
-
-//Skal aldri gå forbi endepunktene
-HardwareMovement elevator_limits(HardwareMovement current_movement){
-  if(hardware_read_floor_sensor(0)){
-    return HARDWARE_MOVEMENT_STOP;
-  } else if (hardware_read_floor_sensor(HARDWARE_NUMBER_OF_FLOORS - 1)){
-    return HARDWARE_MOVEMENT_STOP;
-  }
-  else
-  {
-    return current_movement;
-  }
-}
