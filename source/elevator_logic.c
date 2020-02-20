@@ -74,13 +74,6 @@ HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[], int temp_
         if(i < temp_floor){
           *wrong_dir_flag = 1;
           return HARDWARE_MOVEMENT_DOWN;
-          /*while(i != temp_floor){
-              hardware_command_movement(HARDWARE_MOVEMENT_DOWN);
-              set_UP_list(UP_list);
-              set_DOWN_list(DOWN_list);
-              stop_DOWN_list_elevator()
-              temp_floor = current_floor(temp_floor);
-          }*/
         } else {
           return HARDWARE_MOVEMENT_UP;
       }
@@ -90,12 +83,6 @@ HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[], int temp_
         if(i > temp_floor){
           *wrong_dir_flag = 1;
           return HARDWARE_MOVEMENT_UP;
-          /*while(i != temp_floor){UP_list[i] == 1)
-              hardware_command_movement(HARDWARE_MOVEMENT_UP);
-              set_UP_list(UP_list);
-              set_DOWN_list(DOWN_list);
-              temp_floor = current_floor(temp_floor);
-          }*/
         } else {
             return HARDWARE_MOVEMENT_DOWN;
         }
@@ -103,31 +90,6 @@ HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[], int temp_
   }
   return HARDWARE_MOVEMENT_STOP;
 }
-
-/*
-HardwareMovement stop_UP_list_elevator(int UP_list[], int current_floor, HardwareMovement current_movement){
-  for(int i = 0; i < sizeof(HardwareOrder); i++){
-    if((UP_list[i] == 1) && (i == current_floor)){
-      UP_list[i] = 0;
-      hardware_command_order_light(i, HARDWARE_MOVEMENT_UP, 0);
-      return HARDWARE_MOVEMENT_STOP;
-    }
-  }
-  return current_movement;
-}
-
-HardwareMovement stop_DOWN_list_elevator(int DOWN_list[], int current_floor, HardwareMovement current_movement){
-  for(int i = 0; i < sizeof(HardwareOrder); i++){
-    if((DOWN_list[i] == 1) && ((i + 1) == current_floor)){
-      DOWN_list[i] = 0;
-      hardware_command_order_light((i + 1), HARDWARE_MOVEMENT_DOWN, 0);
-      return HARDWARE_MOVEMENT_STOP;
-    }
-  }
-  return current_movement;
-}
-*/
-
 
 void wait_3_seconds(int UP_list[], int DOWN_list[], int current_floor, HardwareMovement *current_movement){
   double initTime = clock();
