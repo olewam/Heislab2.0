@@ -77,3 +77,5 @@ HardwareMovement stop_DOWN_list_elevator(int DOWN_list[], int UP_list[], int cur
   * @brief clear all orders
 */
 void clear_all_orders(int UP_list[], int DOWN_list[]);
+
+void check_next_direction(HardwareMovement last_movement, HardwareMovement *current_movement, int current_floor, _Bool  stop_flag_up, _Bool  stop_flag_down, int UP_list[], int DOWN_list[], _Bool * wrong_dir_flag, _Bool above_flag);

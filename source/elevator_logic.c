@@ -73,7 +73,7 @@ void handle_inside_order(int UP_list[], int DOWN_list[]){
 
 HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[], int temp_floor, _Bool * wrong_dir_flag, _Bool above_flag){
     for(int i = 0; i < HARDWARE_NUMBER_OF_FLOORS; i++){
-      if(UP_list[i] == 1){
+      if(UP_list[i] == 1 ){
         if(i < temp_floor){
           *wrong_dir_flag = 1;
           return HARDWARE_MOVEMENT_DOWN;
@@ -183,5 +183,25 @@ void clear_all_orders(int UP_list[], int DOWN_list[]){
   for(int i = 0; i < HARDWARE_NUMBER_OF_FLOORS; i++){
     UP_list[i] = 0;
     DOWN_list[i] = 0;
+  }
+}
+
+void check_next_direction(HardwareMovement last_movement, HardwareMovement *current_movement, int current_floor, _Bool  stop_flag_up, _Bool  stop_flag_down, int UP_list[], int DOWN_list[], _Bool * wrong_dir_flag, _Bool above_flag){
+  if(last_movement == HARDWARE_MOVEMENT_UP){
+    check_higher_order(UP_list, current_floor, &stop_flag_up);
+    check_higher_order(DOWN_list, current_floor, &stop_flag_up);
+    if(stop_flag_up){
+      *current_movement = HARDWARE_MOVEMENT_UP;
+    }
+  }
+  else if(last_movement == HARDWARE_MOVEMENT_DOWN){
+    check_lower_order(UP_list, current_floor, &stop_flag_down);
+    check_lower_order(DOWN_list, current_floor, &stop_flag_down);
+    if(stop_flag_down){
+      *current_movement = HARDWARE_MOVEMENT_DOWN;
+    }
+  }
+  else{
+    *current_movement = choose_init_direction(UP_list, DOWN_list, current_floor, wrong_dir_flag, above_flag);
   }
 }

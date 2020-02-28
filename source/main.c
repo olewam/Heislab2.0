@@ -27,6 +27,7 @@ int main(){
 	  int floor = find_default_floor();
     printf("%d\n", floor);
 	  HardwareMovement movement = HARDWARE_MOVEMENT_STOP;
+    HardwareMovement last_movement = movement;
 	  hardware_command_movement(movement);
 
     int UP_list[] = {0, 0, 0, 0};
@@ -39,6 +40,7 @@ int main(){
 
 
     while(1){
+      last_movement = movement;
       read_obstruction_signal();
       stop_button_pushed(&movement, floor, UP_list, DOWN_list, &wrong_dir_flag);
 
@@ -54,15 +56,17 @@ int main(){
 
 
 
+
       switch(movement){
         case HARDWARE_MOVEMENT_UP:
             if(wrong_dir_flag == 0){
               stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag_down);
+
             }
             if(wrong_dir_flag == 1){
                 check_higher_order(DOWN_list, floor, &stop_flag_up);
                 stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag, stop_flag_up);
-                //stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag_down);
+                stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag_down);
                 stop_flag_up = 1;
             }
             break;
@@ -74,14 +78,17 @@ int main(){
               if(wrong_dir_flag == 1){
                     check_lower_order(UP_list, floor, &stop_flag_down);
                     stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag_down);
-                    //stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag, stop_flag_up);
+                    stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag, stop_flag_up);
                     stop_flag_down = 1;
               }
               break;
 
           case HARDWARE_MOVEMENT_STOP:
-              movement = choose_init_direction(UP_list, DOWN_list, floor, &wrong_dir_flag, above_flag);
+              check_next_direction(last_movement, &movement, floor, stop_flag_up, stop_flag_down, UP_list, DOWN_list, &wrong_dir_flag, above_flag);
+
+              //movement = choose_init_direction(UP_list, DOWN_list, floor, &wrong_dir_flag, above_flag);
               hardware_command_movement(movement);
+
               break;
 
           default:
