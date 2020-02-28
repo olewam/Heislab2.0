@@ -35,6 +35,7 @@ int main(){
     _Bool stop_flag_up = 1;
     _Bool stop_flag_down = 1;
     _Bool wrong_dir_flag = 0;
+    _Bool above_flag = 0;
 
 
     while(1){
@@ -44,12 +45,13 @@ int main(){
 
       set_current_floor_light(floor);
       set_order_lights();
-      floor = current_floor(floor);
+      floor = current_floor(floor, &above_flag, movement);
 
 
       set_UP_list(UP_list);
       set_DOWN_list(DOWN_list);
       handle_inside_order(UP_list, DOWN_list);
+
 
 
       switch(movement){
@@ -60,6 +62,7 @@ int main(){
             if(wrong_dir_flag == 1){
                 check_higher_order(DOWN_list, floor, &stop_flag_up);
                 stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag, stop_flag_up);
+                //stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag_down);
                 stop_flag_up = 1;
             }
             break;
@@ -71,12 +74,13 @@ int main(){
               if(wrong_dir_flag == 1){
                     check_lower_order(UP_list, floor, &stop_flag_down);
                     stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag_down);
+                    //stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag, stop_flag_up);
                     stop_flag_down = 1;
               }
               break;
 
           case HARDWARE_MOVEMENT_STOP:
-              movement = choose_init_direction(UP_list, DOWN_list, floor, &wrong_dir_flag);
+              movement = choose_init_direction(UP_list, DOWN_list, floor, &wrong_dir_flag, above_flag);
               hardware_command_movement(movement);
               break;
 

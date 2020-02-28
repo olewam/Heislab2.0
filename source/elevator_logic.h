@@ -11,11 +11,16 @@
 int find_default_floor();
 
 /**
+  * @brief is the elevator above or below current floor
+*/
+void above_or_below(_Bool *above_flag, HardwareMovement current_movement);
+
+/**
   * @brief find current floor
   *
   * @return current floor
 */
-int current_floor(int temp_floor);
+int current_floor(int temp_floor, _Bool *above_flag, HardwareMovement current_movement);
 
 /**
   * @brief set list of orders going UP
@@ -37,7 +42,7 @@ void handle_inside_order(int UP_list[], int DOWN_list[]);
   *
   * @return movement direction for first order
 */
-HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[], int temp_floor, _Bool * wrong_dir_flag);
+HardwareMovement choose_init_direction(int UP_list[], int DOWN_list[], int temp_floor, _Bool * wrong_dir_flag, _Bool above_flag);
 
 /**
   * @brief stop for 3 sek
