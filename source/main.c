@@ -39,7 +39,7 @@ int main(){
 
 
     while(1){
-      read_obstruction_signal();
+      terminate_elevator();
       stop_button_pushed(&movement, floor, UP_list, DOWN_list, &wrong_dir_flag);
 
 
@@ -62,7 +62,7 @@ int main(){
             if(wrong_dir_flag == 1){
                 check_higher_order(DOWN_list, floor, &stop_flag_up);
                 stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag, stop_flag_up);
-                //stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag_down);
+                stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag_down);
                 stop_flag_up = 1;
             }
             break;
@@ -74,7 +74,7 @@ int main(){
               if(wrong_dir_flag == 1){
                     check_lower_order(UP_list, floor, &stop_flag_down);
                     stop_UP_list_elevator(UP_list, DOWN_list, floor, &movement, &wrong_dir_flag, stop_flag_down);
-                    //stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag, stop_flag_up);
+                    stop_DOWN_list_elevator(DOWN_list, UP_list, floor, &movement, &wrong_dir_flag, stop_flag_up);
                     stop_flag_down = 1;
               }
               break;

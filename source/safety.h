@@ -11,7 +11,7 @@ void sigint_handler(int sig);
 /**
   * @brief stop the elevator if obstruction switch is used
 */
-void read_obstruction_signal();
+void terminate_elevator();
 
 /**
   * @brief stop the elevator when button is pushed, and start it again in correct direction
