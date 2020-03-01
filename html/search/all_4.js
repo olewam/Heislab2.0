@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
-  ['main_2ec',['main.c',['../main_8c.html',1,'']]]
+  ['find_5fdefault_5ffloor',['find_default_floor',['../elevator__logic_8c.html#a9361142831beeec2badb36bb02c8c704',1,'find_default_floor():&#160;elevator_logic.c'],['../elevator__logic_8h.html#a9361142831beeec2badb36bb02c8c704',1,'find_default_floor():&#160;elevator_logic.c']]]
 ];

@@ -1,6 +1,6 @@
 /**
   * @file
-  * @brief safetyfunctions for the elevator
+  * @brief safety functions for the elevator
 */
 
 /**

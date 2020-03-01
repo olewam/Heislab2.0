@@ -1,0 +1,47 @@
+\hypertarget{button__lights__doors_8c}{}\section{source/button\+\_\+lights\+\_\+doors.c File Reference}
+\label{button__lights__doors_8c}\index{source/button\+\_\+lights\+\_\+doors.\+c@{source/button\+\_\+lights\+\_\+doors.\+c}}
+
+
+implementation of functions for buttons, lights and doors  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hardware.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Include dependency graph for button\+\_\+lights\+\_\+doors.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{button__lights__doors_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{button__lights__doors_8c_a34c3c2b1db9887ba000a55f0bb5dbea0}\label{button__lights__doors_8c_a34c3c2b1db9887ba000a55f0bb5dbea0}} 
+void \hyperlink{button__lights__doors_8c_a34c3c2b1db9887ba000a55f0bb5dbea0}{set\+\_\+current\+\_\+floor\+\_\+light} (int current\+\_\+floor)
+\begin{DoxyCompactList}\small\item\em turn on the lights for current floor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{button__lights__doors_8c_ac3cbb05034ff71c26f5b7eab1df24dbf}\label{button__lights__doors_8c_ac3cbb05034ff71c26f5b7eab1df24dbf}} 
+void \hyperlink{button__lights__doors_8c_ac3cbb05034ff71c26f5b7eab1df24dbf}{set\+\_\+order\+\_\+lights} ()
+\begin{DoxyCompactList}\small\item\em set the order lights on the panel \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{button__lights__doors_8c_afe21df0455a7cb03dbd9c9294697704e}\label{button__lights__doors_8c_afe21df0455a7cb03dbd9c9294697704e}} 
+void \hyperlink{button__lights__doors_8c_afe21df0455a7cb03dbd9c9294697704e}{set\+\_\+\+U\+P\+\_\+list} (int U\+P\+\_\+list\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em set list of orders going UP \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{button__lights__doors_8c_aebbe53837d376172d3029098cbf0e005}\label{button__lights__doors_8c_aebbe53837d376172d3029098cbf0e005}} 
+void \hyperlink{button__lights__doors_8c_aebbe53837d376172d3029098cbf0e005}{set\+\_\+\+D\+O\+W\+N\+\_\+list} (int D\+O\+W\+N\+\_\+list\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em set list of orders going D\+O\+WN \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{button__lights__doors_8c_a28196553bb87b4f4c728220b3e26566e}\label{button__lights__doors_8c_a28196553bb87b4f4c728220b3e26566e}} 
+void \hyperlink{button__lights__doors_8c_a28196553bb87b4f4c728220b3e26566e}{set\+\_\+\+I\+N\+S\+I\+D\+E\+\_\+order} (int U\+P\+\_\+list\mbox{[}$\,$\mbox{]}, int D\+O\+W\+N\+\_\+list\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em handle orders from inside elavtor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{button__lights__doors_8c_a59230a74bacebe9fb7ce887d95ce91d9}\label{button__lights__doors_8c_a59230a74bacebe9fb7ce887d95ce91d9}} 
+void \hyperlink{button__lights__doors_8c_a59230a74bacebe9fb7ce887d95ce91d9}{wait\+\_\+3\+\_\+seconds} (int U\+P\+\_\+list\mbox{[}$\,$\mbox{]}, int D\+O\+W\+N\+\_\+list\mbox{[}$\,$\mbox{]}, int current\+\_\+floor, \hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} $\ast$current\+\_\+movement)
+\begin{DoxyCompactList}\small\item\em stop for 3 sec \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{button__lights__doors_8c_afd77151474c3e94d7c52fd75413ae3ca}\label{button__lights__doors_8c_afd77151474c3e94d7c52fd75413ae3ca}} 
+void \hyperlink{button__lights__doors_8c_afd77151474c3e94d7c52fd75413ae3ca}{clear\+\_\+all\+\_\+order\+\_\+lights} ()
+\begin{DoxyCompactList}\small\item\em clear all the order lights at once \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+implementation of functions for buttons, lights and doors 
+

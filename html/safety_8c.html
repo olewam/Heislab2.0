@@ -69,17 +69,21 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>implementation of safetyfunctions  
+<p>implementation of safety functions  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="hardware_8h_source.html">hardware.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="elevator__logic_8h_source.html">elevator_logic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="buttons__lights__doors_8h_source.html">buttons_lights_doors.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for safety.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="safety_8c__incl.png" border="0" usemap="#source_2safety_8c" alt=""/></div>
 <map name="source_2safety_8c" id="source_2safety_8c">
 <area shape="rect" id="node4" href="hardware_8h.html" title="Driver for the elevator hardware. " alt="" coords="179,80,266,107"/>
+<area shape="rect" id="node5" href="elevator__logic_8h.html" title="functions to create the elevator logic " alt="" coords="290,80,403,107"/>
+<area shape="rect" id="node6" href="buttons__lights__doors_8h.html" title="functions for buttons, lights and doors " alt="" coords="427,80,581,107"/>
 </map>
 </div>
 </div>
@@ -87,20 +91,21 @@ Include dependency graph for safety.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a333290f845f371fb237ce82394640390"><td class="memItemLeft" align="right" valign="top"><a id="a333290f845f371fb237ce82394640390"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="safety_8c.html#a333290f845f371fb237ce82394640390">read_obstruction_signal</a> ()</td></tr>
-<tr class="memdesc:a333290f845f371fb237ce82394640390"><td class="mdescLeft">&#160;</td><td class="mdescRight">stop the elevator if obstruction switch is used <br /></td></tr>
-<tr class="separator:a333290f845f371fb237ce82394640390"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ef434f57c0cde9e2dca0f8d5a9235ab"><td class="memItemLeft" align="right" valign="top"><a id="a1ef434f57c0cde9e2dca0f8d5a9235ab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>stop_button_pushed</b> (<a class="el" href="hardware_8h.html#a2167c399a24df296afc432bcb88228af">HardwareMovement</a> current_movement)</td></tr>
-<tr class="separator:a1ef434f57c0cde9e2dca0f8d5a9235ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a258e3b580e688a0cf46e4258525aeaf1"><td class="memItemLeft" align="right" valign="top"><a id="a258e3b580e688a0cf46e4258525aeaf1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="safety_8c.html#a258e3b580e688a0cf46e4258525aeaf1">sigint_handler</a> (int sig)</td></tr>
 <tr class="memdesc:a258e3b580e688a0cf46e4258525aeaf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop elevator. <br /></td></tr>
 <tr class="separator:a258e3b580e688a0cf46e4258525aeaf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa58438b6ec5466d3eb6c93aa28a44b22"><td class="memItemLeft" align="right" valign="top"><a id="aa58438b6ec5466d3eb6c93aa28a44b22"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="safety_8c.html#aa58438b6ec5466d3eb6c93aa28a44b22">terminate_elevator</a> ()</td></tr>
+<tr class="memdesc:aa58438b6ec5466d3eb6c93aa28a44b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">stop the elevator if obstruction switch is used <br /></td></tr>
+<tr class="separator:aa58438b6ec5466d3eb6c93aa28a44b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3a2c31c67b7bc986376ce31ccb1d341"><td class="memItemLeft" align="right" valign="top"><a id="aa3a2c31c67b7bc986376ce31ccb1d341"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="safety_8c.html#aa3a2c31c67b7bc986376ce31ccb1d341">stop_button_pushed</a> (<a class="el" href="hardware_8h.html#a2167c399a24df296afc432bcb88228af">HardwareMovement</a> *current_movement, int current_floor, int UP_list[], int DOWN_list[], _Bool *wrong_dir_flag)</td></tr>
+<tr class="memdesc:aa3a2c31c67b7bc986376ce31ccb1d341"><td class="mdescLeft">&#160;</td><td class="mdescRight">stop the elevator when button is pushed, and start it again in correct direction <br /></td></tr>
+<tr class="separator:aa3a2c31c67b7bc986376ce31ccb1d341"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>implementation of safetyfunctions </p>
+<div class="textblock"><p>implementation of safety functions </p>
 
 <p class="definition">Definition in file <a class="el" href="safety_8c_source.html">safety.c</a>.</p>
 </div></div><!-- contents -->

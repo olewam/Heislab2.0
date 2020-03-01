@@ -1,6 +1,6 @@
 <map id="source/hardware.h" name="source/hardware.h">
-<area shape="rect" id="node2" href="$floor__operations_8c.html" title="Implementation of floor operation functions. " alt="" coords="5,80,173,107"/>
-<area shape="rect" id="node3" href="$main_8c.html" title="main file for running the elevator code " alt="" coords="197,80,301,107"/>
-<area shape="rect" id="node4" href="$order__functions_8c.html" title="implementation of order functions " alt="" coords="325,80,491,107"/>
-<area shape="rect" id="node5" href="$safety_8c.html" title="implementation of safetyfunctions " alt="" coords="515,80,627,107"/>
+<area shape="rect" id="node2" href="$buttons__lights__doors_8c.html" title="implementation of functions for buttons, lights and doors " alt="" coords="5,80,152,121"/>
+<area shape="rect" id="node3" href="$elevator__logic_8c.html" title="implementation of functions to create the elevator logic " alt="" coords="177,87,333,114"/>
+<area shape="rect" id="node4" href="$main_8c.html" title="main file for running the elevator code. while loop handling movement of elevator ..." alt="" coords="357,87,461,114"/>
+<area shape="rect" id="node5" href="$safety_8c.html" title="implementation of safety functions " alt="" coords="485,87,597,114"/>
 </map>

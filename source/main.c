@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <signal.h>
 #include "hardware.h"
-#include "button_lights_doors.h"
+#include "buttons_lights_doors.h"
 #include "safety.h"
 #include "elevator_logic.h"
 #include <time.h>

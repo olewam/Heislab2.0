@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "hardware.h"
-#include "button_lights_doors.h"
+#include "buttons_lights_doors.h"
 #include <time.h>
 #include <stdbool.h>
 

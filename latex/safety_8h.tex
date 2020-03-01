@@ -2,11 +2,10 @@
 \label{safety_8h}\index{source/safety.\+h@{source/safety.\+h}}
 
 
-safetyfunctions for the elevator  
+safety functions for the elevator  
 
 
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,17 +15,17 @@ This graph shows which files directly or indirectly include this file\+:
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{safety_8h_a333290f845f371fb237ce82394640390}\label{safety_8h_a333290f845f371fb237ce82394640390}} 
-void \hyperlink{safety_8h_a333290f845f371fb237ce82394640390}{read\+\_\+obstruction\+\_\+signal} ()
-\begin{DoxyCompactList}\small\item\em stop the elevator if obstruction switch is used \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{safety_8h_a10ff64f279bc37be638909f77035ad43}\label{safety_8h_a10ff64f279bc37be638909f77035ad43}} 
-void \hyperlink{safety_8h_a10ff64f279bc37be638909f77035ad43}{stop\+\_\+button\+\_\+pushed} ()
-\begin{DoxyCompactList}\small\item\em stop the elevator when button is pushed \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{safety_8h_a258e3b580e688a0cf46e4258525aeaf1}\label{safety_8h_a258e3b580e688a0cf46e4258525aeaf1}} 
 void \hyperlink{safety_8h_a258e3b580e688a0cf46e4258525aeaf1}{sigint\+\_\+handler} (int sig)
-\begin{DoxyCompactList}\small\item\em Stop elevator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Stop elevator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{safety_8h_aa58438b6ec5466d3eb6c93aa28a44b22}\label{safety_8h_aa58438b6ec5466d3eb6c93aa28a44b22}} 
+void \hyperlink{safety_8h_aa58438b6ec5466d3eb6c93aa28a44b22}{terminate\+\_\+elevator} ()
+\begin{DoxyCompactList}\small\item\em stop the elevator if obstruction switch is used \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{safety_8h_aa3a2c31c67b7bc986376ce31ccb1d341}\label{safety_8h_aa3a2c31c67b7bc986376ce31ccb1d341}} 
+void \hyperlink{safety_8h_aa3a2c31c67b7bc986376ce31ccb1d341}{stop\+\_\+button\+\_\+pushed} (\hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} $\ast$current\+\_\+movement, int current\+\_\+floor, int U\+P\+\_\+list\mbox{[}$\,$\mbox{]}, int D\+O\+W\+N\+\_\+list\mbox{[}$\,$\mbox{]}, \+\_\+\+Bool $\ast$wrong\+\_\+dir\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em stop the elevator when button is pushed, and start it again in correct direction \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-safetyfunctions for the elevator 
+safety functions for the elevator 
 

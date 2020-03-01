@@ -62,6 +62,8 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">elevator_logic.c File Reference</div>  </div>
 </div><!--header-->
@@ -69,13 +71,269 @@ $(function() {
 
 <p>implementation of functions to create the elevator logic  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="hardware_8h_source.html">hardware.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="buttons__lights__doors_8h_source.html">buttons_lights_doors.h</a>&quot;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for elevator_logic.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="elevator__logic_8c__incl.png" border="0" usemap="#source_2elevator__logic_8c" alt=""/></div>
+<map name="source_2elevator__logic_8c" id="source_2elevator__logic_8c">
+<area shape="rect" id="node4" href="hardware_8h.html" title="Driver for the elevator hardware. " alt="" coords="179,80,266,107"/>
+<area shape="rect" id="node5" href="buttons__lights__doors_8h.html" title="functions for buttons, lights and doors " alt="" coords="290,80,443,107"/>
+</map>
+</div>
+</div>
 <p><a href="elevator__logic_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a9361142831beeec2badb36bb02c8c704"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elevator__logic_8c.html#a9361142831beeec2badb36bb02c8c704">find_default_floor</a> ()</td></tr>
+<tr class="memdesc:a9361142831beeec2badb36bb02c8c704"><td class="mdescLeft">&#160;</td><td class="mdescRight">default position for elevator on startup  <a href="#a9361142831beeec2badb36bb02c8c704">More...</a><br /></td></tr>
+<tr class="separator:a9361142831beeec2badb36bb02c8c704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab08b4a721a238bce7649b0bd37c5495"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elevator__logic_8c.html#aab08b4a721a238bce7649b0bd37c5495">above_or_below</a> (_Bool *above_flag, <a class="el" href="hardware_8h.html#a2167c399a24df296afc432bcb88228af">HardwareMovement</a> current_movement)</td></tr>
+<tr class="memdesc:aab08b4a721a238bce7649b0bd37c5495"><td class="mdescLeft">&#160;</td><td class="mdescRight">is the elevator above or below current floor  <a href="#aab08b4a721a238bce7649b0bd37c5495">More...</a><br /></td></tr>
+<tr class="separator:aab08b4a721a238bce7649b0bd37c5495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfc0e35c9992c89643b83cf804425ad5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elevator__logic_8c.html#adfc0e35c9992c89643b83cf804425ad5">read_current_floor</a> (int current_floor, _Bool *above_flag, <a class="el" href="hardware_8h.html#a2167c399a24df296afc432bcb88228af">HardwareMovement</a> current_movement)</td></tr>
+<tr class="memdesc:adfc0e35c9992c89643b83cf804425ad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">find current floor  <a href="#adfc0e35c9992c89643b83cf804425ad5">More...</a><br /></td></tr>
+<tr class="separator:adfc0e35c9992c89643b83cf804425ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81e37fb91c71e8d0b79fa0610954567c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="hardware_8h.html#a2167c399a24df296afc432bcb88228af">HardwareMovement</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elevator__logic_8c.html#a81e37fb91c71e8d0b79fa0610954567c">choose_init_direction</a> (int UP_list[], int DOWN_list[], int current_floor, _Bool *wrong_dir_flag, _Bool above_flag)</td></tr>
+<tr class="memdesc:a81e37fb91c71e8d0b79fa0610954567c"><td class="mdescLeft">&#160;</td><td class="mdescRight">choose movement direction when stationary  <a href="#a81e37fb91c71e8d0b79fa0610954567c">More...</a><br /></td></tr>
+<tr class="separator:a81e37fb91c71e8d0b79fa0610954567c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f5eef5ca9d23946e6aaff62d772f8ef"><td class="memItemLeft" align="right" valign="top"><a id="a3f5eef5ca9d23946e6aaff62d772f8ef"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elevator__logic_8c.html#a3f5eef5ca9d23946e6aaff62d772f8ef">check_higher_order</a> (int DOWN_list[], int current_floor, _Bool *stop_flag_up)</td></tr>
+<tr class="memdesc:a3f5eef5ca9d23946e6aaff62d772f8ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if there is an order higher up that the elevator need to handle first <br /></td></tr>
+<tr class="separator:a3f5eef5ca9d23946e6aaff62d772f8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad79b44adb951ab9d7f05ac5082fb1afc"><td class="memItemLeft" align="right" valign="top"><a id="ad79b44adb951ab9d7f05ac5082fb1afc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elevator__logic_8c.html#ad79b44adb951ab9d7f05ac5082fb1afc">check_lower_order</a> (int UP_list[], int current_floor, _Bool *stop_flag_down)</td></tr>
+<tr class="memdesc:ad79b44adb951ab9d7f05ac5082fb1afc"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if there is an order lower that the elevator need to handle first <br /></td></tr>
+<tr class="separator:ad79b44adb951ab9d7f05ac5082fb1afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0711dcabecbc1b1f2ae35c5f520481e"><td class="memItemLeft" align="right" valign="top"><a id="ab0711dcabecbc1b1f2ae35c5f520481e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>stop_UP_list_elevator</b> (int UP_list[], int DOWN_list[], int current_floor, <a class="el" href="hardware_8h.html#a2167c399a24df296afc432bcb88228af">HardwareMovement</a> *current_movement, _Bool *wrong_dir_flag, _Bool stop_flag_down, _Bool *stop_flag_up)</td></tr>
+<tr class="separator:ab0711dcabecbc1b1f2ae35c5f520481e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99acf1d3cfabc698746571eeaaeb2363"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elevator__logic_8c.html#a99acf1d3cfabc698746571eeaaeb2363">stop_DOWN_list_elevator</a> (int DOWN_list[], int UP_list[], int current_floor, <a class="el" href="hardware_8h.html#a2167c399a24df296afc432bcb88228af">HardwareMovement</a> *current_movement, _Bool *wrong_dir_flag, _Bool stop_flag_up)</td></tr>
+<tr class="memdesc:a99acf1d3cfabc698746571eeaaeb2363"><td class="mdescLeft">&#160;</td><td class="mdescRight">stop elevator based on DOWN_list[]  <a href="#a99acf1d3cfabc698746571eeaaeb2363">More...</a><br /></td></tr>
+<tr class="separator:a99acf1d3cfabc698746571eeaaeb2363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a73588feef8a7208d0bda09b1dd53c8"><td class="memItemLeft" align="right" valign="top"><a id="a1a73588feef8a7208d0bda09b1dd53c8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elevator__logic_8c.html#a1a73588feef8a7208d0bda09b1dd53c8">clear_all_orders</a> (int UP_list[], int DOWN_list[])</td></tr>
+<tr class="memdesc:a1a73588feef8a7208d0bda09b1dd53c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear all orders <br /></td></tr>
+<tr class="separator:a1a73588feef8a7208d0bda09b1dd53c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9e4276c6fd4757aad27901fb68cbc25"><td class="memItemLeft" align="right" valign="top"><a id="ad9e4276c6fd4757aad27901fb68cbc25"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elevator__logic_8c.html#ad9e4276c6fd4757aad27901fb68cbc25">update_elevator</a> (int *current_floor, int UP_list[], int DOWN_list[], <a class="el" href="hardware_8h.html#a2167c399a24df296afc432bcb88228af">HardwareMovement</a> movement, _Bool *above_flag)</td></tr>
+<tr class="memdesc:ad9e4276c6fd4757aad27901fb68cbc25"><td class="mdescLeft">&#160;</td><td class="mdescRight">update current floor, floor lights and orders. <br /></td></tr>
+<tr class="separator:ad9e4276c6fd4757aad27901fb68cbc25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>implementation of functions to create the elevator logic </p>
 
 <p class="definition">Definition in file <a class="el" href="elevator__logic_8c_source.html">elevator_logic.c</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="aab08b4a721a238bce7649b0bd37c5495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab08b4a721a238bce7649b0bd37c5495">&#9670;&nbsp;</a></span>above_or_below()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void above_or_below </td>
+          <td>(</td>
+          <td class="paramtype">_Bool *&#160;</td>
+          <td class="paramname"><em>above_flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="hardware_8h.html#a2167c399a24df296afc432bcb88228af">HardwareMovement</a>&#160;</td>
+          <td class="paramname"><em>current_movement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>is the elevator above or below current floor </p>
+<p>  </p>
+
+<p class="definition">Definition at line <a class="el" href="elevator__logic_8c_source.html#l00026">26</a> of file <a class="el" href="elevator__logic_8c_source.html">elevator_logic.c</a>.</p>
+
+</div>
+</div>
+<a id="a81e37fb91c71e8d0b79fa0610954567c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81e37fb91c71e8d0b79fa0610954567c">&#9670;&nbsp;</a></span>choose_init_direction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="hardware_8h.html#a2167c399a24df296afc432bcb88228af">HardwareMovement</a> choose_init_direction </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>UP_list</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>DOWN_list</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>current_floor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Bool *&#160;</td>
+          <td class="paramname"><em>wrong_dir_flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Bool&#160;</td>
+          <td class="paramname"><em>above_flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>choose movement direction when stationary </p>
+<dl class="section return"><dt>Returns</dt><dd>movement direction for first order </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="elevator__logic_8c_source.html#l00046">46</a> of file <a class="el" href="elevator__logic_8c_source.html">elevator_logic.c</a>.</p>
+
+</div>
+</div>
+<a id="a9361142831beeec2badb36bb02c8c704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9361142831beeec2badb36bb02c8c704">&#9670;&nbsp;</a></span>find_default_floor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int find_default_floor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>default position for elevator on startup </p>
+<dl class="section return"><dt>Returns</dt><dd>floor number for startup </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="elevator__logic_8c_source.html#l00013">13</a> of file <a class="el" href="elevator__logic_8c_source.html">elevator_logic.c</a>.</p>
+
+</div>
+</div>
+<a id="adfc0e35c9992c89643b83cf804425ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfc0e35c9992c89643b83cf804425ad5">&#9670;&nbsp;</a></span>read_current_floor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int read_current_floor </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>current_floor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Bool *&#160;</td>
+          <td class="paramname"><em>above_flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="hardware_8h.html#a2167c399a24df296afc432bcb88228af">HardwareMovement</a>&#160;</td>
+          <td class="paramname"><em>current_movement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>find current floor </p>
+<dl class="section return"><dt>Returns</dt><dd>current floor </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="elevator__logic_8c_source.html#l00034">34</a> of file <a class="el" href="elevator__logic_8c_source.html">elevator_logic.c</a>.</p>
+
+</div>
+</div>
+<a id="a99acf1d3cfabc698746571eeaaeb2363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99acf1d3cfabc698746571eeaaeb2363">&#9670;&nbsp;</a></span>stop_DOWN_list_elevator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stop_DOWN_list_elevator </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>DOWN_list</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>UP_list</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>current_floor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="hardware_8h.html#a2167c399a24df296afc432bcb88228af">HardwareMovement</a> *&#160;</td>
+          <td class="paramname"><em>current_movement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Bool *&#160;</td>
+          <td class="paramname"><em>wrong_dir_flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Bool&#160;</td>
+          <td class="paramname"><em>stop_flag_up</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stop elevator based on DOWN_list[] </p>
+<dl class="section return"><dt>Returns</dt><dd>stop elevator </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="elevator__logic_8c_source.html#l00125">125</a> of file <a class="el" href="elevator__logic_8c_source.html">elevator_logic.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

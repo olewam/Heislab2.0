@@ -1,6 +1,6 @@
 <map id="source/main.c" name="source/main.c">
 <area shape="rect" id="node5" href="$hardware_8h.html" title="Driver for the elevator hardware. " alt="" coords="270,80,357,107"/>
-<area shape="rect" id="node6" href="$floor__operations_8h.html" title="functions for floor operations " alt="" coords="381,80,507,107"/>
-<area shape="rect" id="node8" href="$order__functions_8h.html" title="functions for orders " alt="" coords="691,80,813,107"/>
-<area shape="rect" id="node9" href="$safety_8h.html" title="safetyfunctions for the elevator " alt="" coords="837,80,907,107"/>
+<area shape="rect" id="node6" href="$buttons__lights__doors_8h.html" title="functions for buttons, lights and doors " alt="" coords="381,80,534,107"/>
+<area shape="rect" id="node7" href="$safety_8h.html" title="safety functions for the elevator " alt="" coords="559,80,628,107"/>
+<area shape="rect" id="node8" href="$elevator__logic_8h.html" title="functions to create the elevator logic " alt="" coords="653,80,766,107"/>
 </map>

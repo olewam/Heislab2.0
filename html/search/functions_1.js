@@ -1,13 +1,8 @@
 var searchData=
 [
-  ['hardware_5fcommand_5fdoor_5fopen',['hardware_command_door_open',['../hardware_8h.html#a80d99ddaa8e7b58c9a88b60ea553c1b6',1,'hardware.h']]],
-  ['hardware_5fcommand_5ffloor_5findicator_5fon',['hardware_command_floor_indicator_on',['../hardware_8h.html#a407a6ec035ba357de6aa0fbe55501d1e',1,'hardware.h']]],
-  ['hardware_5fcommand_5fmovement',['hardware_command_movement',['../hardware_8h.html#a01de081ef0510a111053c18cd31afa27',1,'hardware.h']]],
-  ['hardware_5fcommand_5forder_5flight',['hardware_command_order_light',['../hardware_8h.html#aa9b33faa52f0ec5b614d3e7dc05be140',1,'hardware.h']]],
-  ['hardware_5fcommand_5fstop_5flight',['hardware_command_stop_light',['../hardware_8h.html#aa75b3ac17f72b25946414f48d0063a10',1,'hardware.h']]],
-  ['hardware_5finit',['hardware_init',['../hardware_8h.html#a054b8fb8768311d46be58d6a4890d771',1,'hardware.h']]],
-  ['hardware_5fread_5ffloor_5fsensor',['hardware_read_floor_sensor',['../hardware_8h.html#ab048489e6302bb5604aad753f2d7d501',1,'hardware.h']]],
-  ['hardware_5fread_5fobstruction_5fsignal',['hardware_read_obstruction_signal',['../hardware_8h.html#a459fe57a3ee4bc2a28e8a15b2ab14c2d',1,'hardware.h']]],
-  ['hardware_5fread_5forder',['hardware_read_order',['../hardware_8h.html#a87917f3aa093fb46ca821a400d011ee8',1,'hardware.h']]],
-  ['hardware_5fread_5fstop_5fsignal',['hardware_read_stop_signal',['../hardware_8h.html#a4a77b27c86675c00b513db3445966804',1,'hardware.h']]]
+  ['check_5fhigher_5forder',['check_higher_order',['../elevator__logic_8c.html#a3f5eef5ca9d23946e6aaff62d772f8ef',1,'check_higher_order(int DOWN_list[], int current_floor, _Bool *stop_flag_up):&#160;elevator_logic.c'],['../elevator__logic_8h.html#a3f5eef5ca9d23946e6aaff62d772f8ef',1,'check_higher_order(int DOWN_list[], int current_floor, _Bool *stop_flag_up):&#160;elevator_logic.c']]],
+  ['check_5flower_5forder',['check_lower_order',['../elevator__logic_8c.html#ad79b44adb951ab9d7f05ac5082fb1afc',1,'check_lower_order(int UP_list[], int current_floor, _Bool *stop_flag_down):&#160;elevator_logic.c'],['../elevator__logic_8h.html#ad79b44adb951ab9d7f05ac5082fb1afc',1,'check_lower_order(int UP_list[], int current_floor, _Bool *stop_flag_down):&#160;elevator_logic.c']]],
+  ['choose_5finit_5fdirection',['choose_init_direction',['../elevator__logic_8c.html#a81e37fb91c71e8d0b79fa0610954567c',1,'choose_init_direction(int UP_list[], int DOWN_list[], int current_floor, _Bool *wrong_dir_flag, _Bool above_flag):&#160;elevator_logic.c'],['../elevator__logic_8h.html#a81e37fb91c71e8d0b79fa0610954567c',1,'choose_init_direction(int UP_list[], int DOWN_list[], int current_floor, _Bool *wrong_dir_flag, _Bool above_flag):&#160;elevator_logic.c']]],
+  ['clear_5fall_5forder_5flights',['clear_all_order_lights',['../buttons__lights__doors_8c.html#afd77151474c3e94d7c52fd75413ae3ca',1,'clear_all_order_lights():&#160;buttons_lights_doors.c'],['../buttons__lights__doors_8h.html#afd77151474c3e94d7c52fd75413ae3ca',1,'clear_all_order_lights():&#160;buttons_lights_doors.c']]],
+  ['clear_5fall_5forders',['clear_all_orders',['../elevator__logic_8c.html#a1a73588feef8a7208d0bda09b1dd53c8',1,'clear_all_orders(int UP_list[], int DOWN_list[]):&#160;elevator_logic.c'],['../elevator__logic_8h.html#a1a73588feef8a7208d0bda09b1dd53c8',1,'clear_all_orders(int UP_list[], int DOWN_list[]):&#160;elevator_logic.c']]]
 ];

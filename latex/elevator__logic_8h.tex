@@ -5,8 +5,141 @@
 functions to create the elevator logic  
 
 
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{elevator__logic_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{elevator__logic_8h_a9361142831beeec2badb36bb02c8c704}{find\+\_\+default\+\_\+floor} ()
+\begin{DoxyCompactList}\small\item\em default position for elevator on startup \end{DoxyCompactList}\item 
+void \hyperlink{elevator__logic_8h_aab08b4a721a238bce7649b0bd37c5495}{above\+\_\+or\+\_\+below} (\+\_\+\+Bool $\ast$above\+\_\+flag, \hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} current\+\_\+movement)
+\begin{DoxyCompactList}\small\item\em is the elevator above or below current floor \end{DoxyCompactList}\item 
+int \hyperlink{elevator__logic_8h_adfc0e35c9992c89643b83cf804425ad5}{read\+\_\+current\+\_\+floor} (int current\+\_\+floor, \+\_\+\+Bool $\ast$above\+\_\+flag, \hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} current\+\_\+movement)
+\begin{DoxyCompactList}\small\item\em find current floor \end{DoxyCompactList}\item 
+\hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} \hyperlink{elevator__logic_8h_a81e37fb91c71e8d0b79fa0610954567c}{choose\+\_\+init\+\_\+direction} (int U\+P\+\_\+list\mbox{[}$\,$\mbox{]}, int D\+O\+W\+N\+\_\+list\mbox{[}$\,$\mbox{]}, int current\+\_\+floor, \+\_\+\+Bool $\ast$wrong\+\_\+dir\+\_\+flag, \+\_\+\+Bool above\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em choose movement direction when stationary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{elevator__logic_8h_a3f5eef5ca9d23946e6aaff62d772f8ef}\label{elevator__logic_8h_a3f5eef5ca9d23946e6aaff62d772f8ef}} 
+void \hyperlink{elevator__logic_8h_a3f5eef5ca9d23946e6aaff62d772f8ef}{check\+\_\+higher\+\_\+order} (int D\+O\+W\+N\+\_\+list\mbox{[}$\,$\mbox{]}, int current\+\_\+floor, \+\_\+\+Bool $\ast$stop\+\_\+flag\+\_\+up)
+\begin{DoxyCompactList}\small\item\em check if there is an order higher up that the elevator need to handle first \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{elevator__logic_8h_ad79b44adb951ab9d7f05ac5082fb1afc}\label{elevator__logic_8h_ad79b44adb951ab9d7f05ac5082fb1afc}} 
+void \hyperlink{elevator__logic_8h_ad79b44adb951ab9d7f05ac5082fb1afc}{check\+\_\+lower\+\_\+order} (int U\+P\+\_\+list\mbox{[}$\,$\mbox{]}, int current\+\_\+floor, \+\_\+\+Bool $\ast$stop\+\_\+flag\+\_\+down)
+\begin{DoxyCompactList}\small\item\em check if there is an order lower that the elevator need to handle first \end{DoxyCompactList}\item 
+\hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} \hyperlink{elevator__logic_8h_a614537fe615a0372390fe3bdb1d1e4ea}{stop\+\_\+\+U\+P\+\_\+list\+\_\+elevator} (int U\+P\+\_\+list\mbox{[}$\,$\mbox{]}, int D\+O\+W\+N\+\_\+list\mbox{[}$\,$\mbox{]}, int current\+\_\+floor, \hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} $\ast$current\+\_\+movement, \+\_\+\+Bool $\ast$wrong\+\_\+dir\+\_\+flag, \+\_\+\+Bool stop\+\_\+flag\+\_\+down)
+\begin{DoxyCompactList}\small\item\em stop elevator based on U\+P\+\_\+list \end{DoxyCompactList}\item 
+\hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} \hyperlink{elevator__logic_8h_a37f819b20e3e5b69f247d916e2fdc0f4}{stop\+\_\+\+D\+O\+W\+N\+\_\+list\+\_\+elevator} (int D\+O\+W\+N\+\_\+list\mbox{[}$\,$\mbox{]}, int U\+P\+\_\+list\mbox{[}$\,$\mbox{]}, int current\+\_\+floor, \hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} $\ast$current\+\_\+movement, \+\_\+\+Bool $\ast$wrong\+\_\+dir\+\_\+flag, \+\_\+\+Bool stop\+\_\+flag\+\_\+up)
+\begin{DoxyCompactList}\small\item\em stop elevator based on D\+O\+W\+N\+\_\+list\mbox{[}\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{elevator__logic_8h_a1a73588feef8a7208d0bda09b1dd53c8}\label{elevator__logic_8h_a1a73588feef8a7208d0bda09b1dd53c8}} 
+void \hyperlink{elevator__logic_8h_a1a73588feef8a7208d0bda09b1dd53c8}{clear\+\_\+all\+\_\+orders} (int U\+P\+\_\+list\mbox{[}$\,$\mbox{]}, int D\+O\+W\+N\+\_\+list\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em clear all orders \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{elevator__logic_8h_ad9e4276c6fd4757aad27901fb68cbc25}\label{elevator__logic_8h_ad9e4276c6fd4757aad27901fb68cbc25}} 
+void \hyperlink{elevator__logic_8h_ad9e4276c6fd4757aad27901fb68cbc25}{update\+\_\+elevator} (int $\ast$current\+\_\+floor, int U\+P\+\_\+list\mbox{[}$\,$\mbox{]}, int D\+O\+W\+N\+\_\+list\mbox{[}$\,$\mbox{]}, \hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} movement, \+\_\+\+Bool $\ast$above\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em update current floor, floor lights and orders. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 functions to create the elevator logic 
 
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{elevator__logic_8h_aab08b4a721a238bce7649b0bd37c5495}\label{elevator__logic_8h_aab08b4a721a238bce7649b0bd37c5495}} 
+\index{elevator\+\_\+logic.\+h@{elevator\+\_\+logic.\+h}!above\+\_\+or\+\_\+below@{above\+\_\+or\+\_\+below}}
+\index{above\+\_\+or\+\_\+below@{above\+\_\+or\+\_\+below}!elevator\+\_\+logic.\+h@{elevator\+\_\+logic.\+h}}
+\subsubsection{\texorpdfstring{above\+\_\+or\+\_\+below()}{above\_or\_below()}}
+{\footnotesize\ttfamily void above\+\_\+or\+\_\+below (\begin{DoxyParamCaption}\item[{\+\_\+\+Bool $\ast$}]{above\+\_\+flag,  }\item[{\hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement}}]{current\+\_\+movement }\end{DoxyParamCaption})}
+
+
+
+is the elevator above or below current floor 
+
+  
+
+Definition at line 26 of file elevator\+\_\+logic.\+c.
+
+\mbox{\Hypertarget{elevator__logic_8h_a81e37fb91c71e8d0b79fa0610954567c}\label{elevator__logic_8h_a81e37fb91c71e8d0b79fa0610954567c}} 
+\index{elevator\+\_\+logic.\+h@{elevator\+\_\+logic.\+h}!choose\+\_\+init\+\_\+direction@{choose\+\_\+init\+\_\+direction}}
+\index{choose\+\_\+init\+\_\+direction@{choose\+\_\+init\+\_\+direction}!elevator\+\_\+logic.\+h@{elevator\+\_\+logic.\+h}}
+\subsubsection{\texorpdfstring{choose\+\_\+init\+\_\+direction()}{choose\_init\_direction()}}
+{\footnotesize\ttfamily \hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} choose\+\_\+init\+\_\+direction (\begin{DoxyParamCaption}\item[{int}]{U\+P\+\_\+list\mbox{[}$\,$\mbox{]},  }\item[{int}]{D\+O\+W\+N\+\_\+list\mbox{[}$\,$\mbox{]},  }\item[{int}]{current\+\_\+floor,  }\item[{\+\_\+\+Bool $\ast$}]{wrong\+\_\+dir\+\_\+flag,  }\item[{\+\_\+\+Bool}]{above\+\_\+flag }\end{DoxyParamCaption})}
+
+
+
+choose movement direction when stationary 
+
+\begin{DoxyReturn}{Returns}
+movement direction for first order 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file elevator\+\_\+logic.\+c.
+
+\mbox{\Hypertarget{elevator__logic_8h_a9361142831beeec2badb36bb02c8c704}\label{elevator__logic_8h_a9361142831beeec2badb36bb02c8c704}} 
+\index{elevator\+\_\+logic.\+h@{elevator\+\_\+logic.\+h}!find\+\_\+default\+\_\+floor@{find\+\_\+default\+\_\+floor}}
+\index{find\+\_\+default\+\_\+floor@{find\+\_\+default\+\_\+floor}!elevator\+\_\+logic.\+h@{elevator\+\_\+logic.\+h}}
+\subsubsection{\texorpdfstring{find\+\_\+default\+\_\+floor()}{find\_default\_floor()}}
+{\footnotesize\ttfamily int find\+\_\+default\+\_\+floor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default position for elevator on startup 
+
+\begin{DoxyReturn}{Returns}
+floor number for startup 
+\end{DoxyReturn}
+
+
+Definition at line 13 of file elevator\+\_\+logic.\+c.
+
+\mbox{\Hypertarget{elevator__logic_8h_adfc0e35c9992c89643b83cf804425ad5}\label{elevator__logic_8h_adfc0e35c9992c89643b83cf804425ad5}} 
+\index{elevator\+\_\+logic.\+h@{elevator\+\_\+logic.\+h}!read\+\_\+current\+\_\+floor@{read\+\_\+current\+\_\+floor}}
+\index{read\+\_\+current\+\_\+floor@{read\+\_\+current\+\_\+floor}!elevator\+\_\+logic.\+h@{elevator\+\_\+logic.\+h}}
+\subsubsection{\texorpdfstring{read\+\_\+current\+\_\+floor()}{read\_current\_floor()}}
+{\footnotesize\ttfamily int read\+\_\+current\+\_\+floor (\begin{DoxyParamCaption}\item[{int}]{current\+\_\+floor,  }\item[{\+\_\+\+Bool $\ast$}]{above\+\_\+flag,  }\item[{\hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement}}]{current\+\_\+movement }\end{DoxyParamCaption})}
+
+
+
+find current floor 
+
+\begin{DoxyReturn}{Returns}
+current floor 
+\end{DoxyReturn}
+
+
+Definition at line 34 of file elevator\+\_\+logic.\+c.
+
+\mbox{\Hypertarget{elevator__logic_8h_a37f819b20e3e5b69f247d916e2fdc0f4}\label{elevator__logic_8h_a37f819b20e3e5b69f247d916e2fdc0f4}} 
+\index{elevator\+\_\+logic.\+h@{elevator\+\_\+logic.\+h}!stop\+\_\+\+D\+O\+W\+N\+\_\+list\+\_\+elevator@{stop\+\_\+\+D\+O\+W\+N\+\_\+list\+\_\+elevator}}
+\index{stop\+\_\+\+D\+O\+W\+N\+\_\+list\+\_\+elevator@{stop\+\_\+\+D\+O\+W\+N\+\_\+list\+\_\+elevator}!elevator\+\_\+logic.\+h@{elevator\+\_\+logic.\+h}}
+\subsubsection{\texorpdfstring{stop\+\_\+\+D\+O\+W\+N\+\_\+list\+\_\+elevator()}{stop\_DOWN\_list\_elevator()}}
+{\footnotesize\ttfamily \hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} stop\+\_\+\+D\+O\+W\+N\+\_\+list\+\_\+elevator (\begin{DoxyParamCaption}\item[{int}]{D\+O\+W\+N\+\_\+list\mbox{[}$\,$\mbox{]},  }\item[{int}]{U\+P\+\_\+list\mbox{[}$\,$\mbox{]},  }\item[{int}]{current\+\_\+floor,  }\item[{\hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} $\ast$}]{current\+\_\+movement,  }\item[{\+\_\+\+Bool $\ast$}]{wrong\+\_\+dir\+\_\+flag,  }\item[{\+\_\+\+Bool}]{stop\+\_\+flag\+\_\+up }\end{DoxyParamCaption})}
+
+
+
+stop elevator based on D\+O\+W\+N\+\_\+list\mbox{[}\mbox{]} 
+
+\begin{DoxyReturn}{Returns}
+stop elevator 
+\end{DoxyReturn}
+
+
+Definition at line 125 of file elevator\+\_\+logic.\+c.
+
+\mbox{\Hypertarget{elevator__logic_8h_a614537fe615a0372390fe3bdb1d1e4ea}\label{elevator__logic_8h_a614537fe615a0372390fe3bdb1d1e4ea}} 
+\index{elevator\+\_\+logic.\+h@{elevator\+\_\+logic.\+h}!stop\+\_\+\+U\+P\+\_\+list\+\_\+elevator@{stop\+\_\+\+U\+P\+\_\+list\+\_\+elevator}}
+\index{stop\+\_\+\+U\+P\+\_\+list\+\_\+elevator@{stop\+\_\+\+U\+P\+\_\+list\+\_\+elevator}!elevator\+\_\+logic.\+h@{elevator\+\_\+logic.\+h}}
+\subsubsection{\texorpdfstring{stop\+\_\+\+U\+P\+\_\+list\+\_\+elevator()}{stop\_UP\_list\_elevator()}}
+{\footnotesize\ttfamily \hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} stop\+\_\+\+U\+P\+\_\+list\+\_\+elevator (\begin{DoxyParamCaption}\item[{int}]{U\+P\+\_\+list\mbox{[}$\,$\mbox{]},  }\item[{int}]{D\+O\+W\+N\+\_\+list\mbox{[}$\,$\mbox{]},  }\item[{int}]{current\+\_\+floor,  }\item[{\hyperlink{hardware_8h_a2167c399a24df296afc432bcb88228af}{Hardware\+Movement} $\ast$}]{current\+\_\+movement,  }\item[{\+\_\+\+Bool $\ast$}]{wrong\+\_\+dir\+\_\+flag,  }\item[{\+\_\+\+Bool}]{stop\+\_\+flag\+\_\+down }\end{DoxyParamCaption})}
+
+
+
+stop elevator based on U\+P\+\_\+list 
+
+\begin{DoxyReturn}{Returns}
+stop elevator 
+\end{DoxyReturn}

@@ -1,4 +1,4 @@
-SOURCES := main.c safety.c elevator_logic.c button_lights_doors.c
+SOURCES := main.c safety.c elevator_logic.c buttons_lights_doors.c
 
 SOURCE_DIR := source
 BUILD_DIR := build

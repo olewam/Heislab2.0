@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['floor_5foperations_2ec',['floor_operations.c',['../floor__operations_8c.html',1,'']]],
-  ['floor_5foperations_2eh',['floor_operations.h',['../floor__operations_8h.html',1,'']]]
+  ['check_5fhigher_5forder',['check_higher_order',['../elevator__logic_8c.html#a3f5eef5ca9d23946e6aaff62d772f8ef',1,'check_higher_order(int DOWN_list[], int current_floor, _Bool *stop_flag_up):&#160;elevator_logic.c'],['../elevator__logic_8h.html#a3f5eef5ca9d23946e6aaff62d772f8ef',1,'check_higher_order(int DOWN_list[], int current_floor, _Bool *stop_flag_up):&#160;elevator_logic.c']]],
+  ['check_5flower_5forder',['check_lower_order',['../elevator__logic_8c.html#ad79b44adb951ab9d7f05ac5082fb1afc',1,'check_lower_order(int UP_list[], int current_floor, _Bool *stop_flag_down):&#160;elevator_logic.c'],['../elevator__logic_8h.html#ad79b44adb951ab9d7f05ac5082fb1afc',1,'check_lower_order(int UP_list[], int current_floor, _Bool *stop_flag_down):&#160;elevator_logic.c']]],
+  ['choose_5finit_5fdirection',['choose_init_direction',['../elevator__logic_8c.html#a81e37fb91c71e8d0b79fa0610954567c',1,'choose_init_direction(int UP_list[], int DOWN_list[], int current_floor, _Bool *wrong_dir_flag, _Bool above_flag):&#160;elevator_logic.c'],['../elevator__logic_8h.html#a81e37fb91c71e8d0b79fa0610954567c',1,'choose_init_direction(int UP_list[], int DOWN_list[], int current_floor, _Bool *wrong_dir_flag, _Bool above_flag):&#160;elevator_logic.c']]],
+  ['clear_5fall_5forder_5flights',['clear_all_order_lights',['../buttons__lights__doors_8c.html#afd77151474c3e94d7c52fd75413ae3ca',1,'clear_all_order_lights():&#160;buttons_lights_doors.c'],['../buttons__lights__doors_8h.html#afd77151474c3e94d7c52fd75413ae3ca',1,'clear_all_order_lights():&#160;buttons_lights_doors.c']]],
+  ['clear_5fall_5forders',['clear_all_orders',['../elevator__logic_8c.html#a1a73588feef8a7208d0bda09b1dd53c8',1,'clear_all_orders(int UP_list[], int DOWN_list[]):&#160;elevator_logic.c'],['../elevator__logic_8h.html#a1a73588feef8a7208d0bda09b1dd53c8',1,'clear_all_orders(int UP_list[], int DOWN_list[]):&#160;elevator_logic.c']]]
 ];

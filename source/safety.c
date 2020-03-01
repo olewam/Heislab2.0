@@ -1,13 +1,13 @@
 /**
   * @file
-  * @brief implementation of safetyfunctions
+  * @brief implementation of safety functions
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "hardware.h"
 #include "elevator_logic.h"
-#include "button_lights_doors.h"
+#include "buttons_lights_doors.h"
 
 void sigint_handler(int sig){
     (void)(sig);
