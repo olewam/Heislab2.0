@@ -1,6 +1,7 @@
 /**
   * @file
-  * @brief main file for running the elevator code
+  * @brief main file for running the elevator code.
+  * while loop handling movement of elevator
 */
 
 #include <stdio.h>
@@ -25,9 +26,7 @@ int main(){
     signal(SIGINT, sigint_handler);
 
 	  int floor = find_default_floor();
-    printf("%d\n", floor);
 	  HardwareMovement movement = HARDWARE_MOVEMENT_STOP;
-	  hardware_command_movement(movement);
 
     int UP_list[] = {0, 0, 0, 0};
     int DOWN_list[] = {0, 0, 0, 0};
@@ -42,17 +41,7 @@ int main(){
       terminate_elevator();
       stop_button_pushed(&movement, floor, UP_list, DOWN_list, &wrong_dir_flag);
 
-
-      set_current_floor_light(floor);
-      set_order_lights();
-      floor = current_floor(floor, &above_flag, movement);
-
-
-      set_UP_list(UP_list);
-      set_DOWN_list(DOWN_list);
-      handle_inside_order(UP_list, DOWN_list);
-
-
+      update_elevator(&floor, UP_list, DOWN_list, movement, &above_flag);
 
       switch(movement){
         case HARDWARE_MOVEMENT_UP:
@@ -85,7 +74,7 @@ int main(){
               break;
 
           default:
-              printf("Hello suckers");
+              printf("Sorry Kolbjørn, we failed you");
               break;
       }
     }
